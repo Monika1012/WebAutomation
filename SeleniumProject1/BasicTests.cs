@@ -14,6 +14,7 @@ namespace Project1
         [SetUp]
         public void Intialize()
         {
+
             // Maximize the browser
             driver.Manage().Window.Maximize();
 
