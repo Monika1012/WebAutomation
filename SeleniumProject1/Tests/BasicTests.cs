@@ -1,30 +1,27 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumProject1.Utilities;
 using System;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
-namespace Project1
-{
+namespace Project1 {
     [TestFixture]
-    public class BasicTests
-    {
+    public class BasicTests {
         IWebDriver driver = new ChromeDriver();
         string description = "Testing" + new Random().Next(1000, 99999).ToString();
         IWebElement AddedRow => driver.FindElements(By.CssSelector("#tmsGrid tbody tr")).First(e => e.Text.Contains(description));
 
 
         [SetUp]
-        public void Intialize()
-        {
+        public void Intialize() {
 
             // Maximize the browser
             driver.Manage().Window.Maximize();
 
-            //Navigate to TurnUp portal
-           driver.Navigate().GoToUrl("http://horse-dev.azurewebsites.net/Account/Login?ReturnUrl=%2f");
+            /*//Navigate to TurnUp portal
+            driver.Navigate().GoToUrl("http://horse-dev.azurewebsites.net/Account/Login?ReturnUrl=%2f");
 
             //Enter the text in Username
             SeleniumSetMethod.EnterText(driver, "UserName", "hari", "Id");
@@ -33,37 +30,32 @@ namespace Project1
             SeleniumSetMethod.EnterText(driver, "Password", "123123", "Id");
 
             // click the button
-            SeleniumSetMethod.Click(driver, "input[type='submit']", "CSS");
+            SeleniumSetMethod.Click(driver, "input[type='submit']", "CSS");*/
 
 
             //validate the text on hyperlink as Hello Hari
-            IWebElement helloHari = driver.FindElement(By.CssSelector("form ul li.dropdown a.dropdown-toggle"));
-            if (helloHari.Text == "Hello hari!")
-            {
-                Console.WriteLine("Logged In successfully, test passed");
-            }
-            else
-            {
-                Console.WriteLine("Login failed, test failed");
-            }
+            //IWebElement helloHari = driver.FindElement(By.CssSelector("form ul li.dropdown a.dropdown-toggle"));
+            //if (helloHari.Text == "Hello hari!") {
+            //    Console.WriteLine("Logged In successfully, test passed");
+            //} else {
+            //    Console.WriteLine("Login failed, test failed");
+            //}
 
 
         }
 
 
-        public void AdminDropdown()
-        {
+        public void AdminDropdown() {
             IWebElement Admnistration = driver.FindElement(By.LinkText("Administration"));
             Admnistration.Click();
             IWebElement TimeMaterial = driver.FindElement(By.LinkText("Time & Materials"));
             TimeMaterial.Click();
         }
 
-         [Test]
-         // First test create new time and Material
-        public void TimeTest()
-        {
-           
+        [Test]
+        // First test create new time and Material
+        public void TimeTest() {
+
             AdminDropdown();
             //click on create new button
             IWebElement CreateNew = driver.FindElement(By.LinkText("Create New"));
@@ -87,7 +79,7 @@ namespace Project1
             SeleniumSetMethod.EnterText(driver, "Code", "123123", "Id");
 
             //Enter text int description
-            SeleniumSetMethod.EnterText(driver, "Description",  description, "Id");
+            SeleniumSetMethod.EnterText(driver, "Description", description, "Id");
 
             //Enter text in price per unit
             IWebElement activateElement = driver.FindElement(By.CssSelector(".k-numeric-wrap.k-state-default.k-expand-padding"));
@@ -104,23 +96,20 @@ namespace Project1
 
             Console.WriteLine("Test Paased");
 
-            
 
-            if(AddedRow == null) {
+
+            if (AddedRow == null) {
 
                 Console.WriteLine("test Failed after Row Added");
 
-             }
-            else
-            {
-                Console.WriteLine("Test Passed after Row Added with description"+ description);
+            } else {
+                Console.WriteLine("Test Passed after Row Added with description" + description);
             }
 
         }
 
         [Test]
-        public void DeleteTest()
-        {
+        public void DeleteTest() {
             AdminDropdown();
             Thread.Sleep(2000);
 
@@ -161,8 +150,7 @@ namespace Project1
             SeleniumSetMethod.Click(driver, " #tmsGrid a[title= 'Go to the last page']", "CSS");
 
 
-            if (AddedRow == null)
-            {
+            if (AddedRow == null) {
                 throw new Exception("row not found");
             }
             var DeleteButton = AddedRow.FindElement(By.LinkText("Delete"));
@@ -172,28 +160,23 @@ namespace Project1
             var DeletedRow = driver.FindElements(By.CssSelector("#tmsGrid tbody tr")).First(e => e.Text.Contains(description));
 
 
-            if (DeletedRow == null)
-            {
+            if (DeletedRow == null) {
 
                 Console.WriteLine(" Test Passed after Delete");
 
-            }
-            else
-            {
+            } else {
                 Console.WriteLine("Test Failed after Delete");
             }
         }
 
         [Test]
-        public void EditTest()
-        {
+        public void EditTest() {
 
         }
 
 
         [TearDown]
-        public void CleanUp()
-        {
+        public void CleanUp() {
             driver.Quit();
         }
     }
