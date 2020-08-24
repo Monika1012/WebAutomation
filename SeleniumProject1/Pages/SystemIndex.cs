@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
-using SeleniumProject1.Base;
-using SeleniumProject1.Grids;
+using SeleniumProject.Base;
+using SeleniumProject.Grids;
 
-namespace SeleniumProject1.Pages {
+namespace SeleniumProject.Pages {
     public class SystemIndex {
         private IWebDriver driver;
 

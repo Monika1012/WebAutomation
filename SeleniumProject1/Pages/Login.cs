@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
-using SeleniumProject1.Base;
-using SeleniumProject1.Utilities;
+using SeleniumProject.Base;
+using SeleniumProject.Utilities;
 
-namespace SeleniumProject1.Pages {
+namespace SeleniumProject.Pages {
     public class Login {
         private IWebDriver driver;
         public Login() {

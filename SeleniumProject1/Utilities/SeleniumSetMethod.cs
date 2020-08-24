@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace SeleniumProject1.Utilities {
+namespace SeleniumProject.Utilities {
     class SeleniumSetMethod {
         public static void EnterText(IWebDriver driver, string element, string value, string elementtype) {
             if (elementtype == "Id") {

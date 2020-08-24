@@ -1,12 +1,12 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using SeleniumProject1.Utilities;
+using SeleniumProject.Utilities;
 using System;
 using System.Linq;
 using System.Threading;
 
-namespace Project1 {
+namespace SeleniumProject.Tests {
     [TestFixture]
     public class BasicTests {
         IWebDriver driver = new ChromeDriver();

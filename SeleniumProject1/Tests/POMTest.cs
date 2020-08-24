@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace SeleniumProject1.Tests {
+namespace SeleniumProject.Tests {
     [TestFixture]
     [Parallelizable(ParallelScope.All)]
     public class POMTest {

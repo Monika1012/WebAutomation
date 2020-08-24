@@ -1,9 +1,9 @@
 ﻿using OpenQA.Selenium;
-using SeleniumProject1.Base;
-using SeleniumProject1.Utilities;
+using SeleniumProject.Base;
+using SeleniumProject.Utilities;
 using System.Linq;
 
-namespace SeleniumProject1.Pages {
+namespace SeleniumProject.Pages {
     public class Edit {
         private IWebDriver driver;
 

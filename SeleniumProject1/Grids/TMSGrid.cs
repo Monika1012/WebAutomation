@@ -1,12 +1,12 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using SeleniumProject1.Base;
-using SeleniumProject1.Utilities;
+using SeleniumProject.Base;
+using SeleniumProject.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-namespace SeleniumProject1.Grids {
+namespace SeleniumProject.Grids {
     public class TMSGrid {
         private IWebDriver driver;
         

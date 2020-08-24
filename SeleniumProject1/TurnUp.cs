@@ -1,7 +1,7 @@
-﻿using SeleniumProject1.Base;
-using SeleniumProject1.Pages;
+﻿using SeleniumProject.Base;
+using SeleniumProject.Pages;
 
-namespace SeleniumProject1 {
+namespace SeleniumProject {
     public class TurnUp {
         public TurnUp() {
 
