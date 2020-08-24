@@ -1,4 +1,4 @@
-﻿Feature: TM
+﻿Feature: TM-FeatureTest
 
 Scenario: Verify able to create time record
 Given I navigate to the TurnUp Portal at 'http://horse-dev.azurewebsites.net/Account/Login?ReturnUrl=%2f'
